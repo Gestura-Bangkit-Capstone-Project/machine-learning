@@ -1,0 +1,14 @@
+# Ignore All Zip
+*.Zip
+
+# Ignore Specific Folder
+API/
+aug/
+data_leon/
+data_leon2/
+data_leon-Copy1/
+data_Nanta/
+image/
+
+# Ignore ipynb_checkpoints
+.ipynb_checkpoints/
