@@ -1,0 +1,74 @@
+{
+    "message": "Berhasil terhubung, silahkan akses endpoint dibawah ini",
+    "endpoints": [
+      {
+        "path": "/sign-to-text",
+        "method": "POST",
+        "input": {
+          "video": {
+            "type": "file",
+            "format": "mp4",
+            "fps": 15,
+            "description": "Video file containing sign language gestures.",
+            "required": true
+          }
+        },
+        "output": {
+          "message": "type: string",
+          "filename": "type: string",
+          "hasil_prediksi": "type: string"
+        },
+        "description": "Transcribes sign language video into text.",
+        "example_request": {
+          "url": "/sign-to-text",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "multipart/form-data"
+          },
+          "body": {
+            "video": [
+              "data: ...",
+              "filename: my_sign_video.mp4",
+              "format: video/mp4"
+            ]
+          }
+        },
+        "example_response": {
+          "message": "Video berhasil diunggah!",
+          "filename": "testVideo2.mp4",
+          "hasil_prediksi": "DDDDDAAABBBBE"
+        }
+      },
+      {
+        "path": "/text-to-sign",
+        "method": "POST",
+        "input": {
+          "text": {
+            "type": "string",
+            "max-length" : 20,
+            "description": "Text to be translated into sign language.",
+            "example": "I love coding"
+          }
+        },
+        "output": {
+          "video": {
+            "type": "file",
+            "format": "mp4",
+            "description": "Video file containing the sign language translation."
+          }
+        },
+        "description": "Translates text into sign language video.",
+        "example_request": {
+          "url": "/text-to-sign",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "text": "I love coding"
+          }
+        },
+        "example_response": "Video Example"
+      }
+    ]
+  }
