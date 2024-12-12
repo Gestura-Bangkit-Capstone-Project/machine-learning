@@ -236,7 +236,7 @@ async def upload_video(file: UploadFile = File(...)):
             TRANSLATOR(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             hasil_predict, array_hasil_predict = TRANSLATOR.predict_sign()
             temp_list.append(alphabet[hasil_predict[0]])
-            if len(temp_list) > 9:
+            if len(temp_list) > 4:
                 append_if_same(temp_list, luaran_translator)
                 temp_list = []
                 
